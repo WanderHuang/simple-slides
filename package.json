@@ -1,0 +1,25 @@
+{
+  "name": "simple-slides",
+  "version": "1.0.0",
+  "description": "👀前端开发简单的reveal主题",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e md,json,css index.js"
+  },
+  "keywords": [
+    "revealjs",
+    "pandoc",
+    "ppt",
+    "frontend",
+    "present"
+  ],
+  "author": "wander",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "nodemonConfig": {
+    "ignore": ["dist/*", "node_modules/*", "reveal.js/*", "package-lock.json", "package.json", "readme.md"],
+    "delay": "3000"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "incremental": true,
+  "theme": "solarized",
+  "transition": "cube",
+  "highlight": "espresso",
+  "width": 1200,
+  "height": 700
+}
