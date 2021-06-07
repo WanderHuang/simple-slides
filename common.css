@@ -24,3 +24,10 @@ p {
 ul {
   font-size: 2rem;
 }
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-height: 700px;
+  max-width: 1400px;
+}

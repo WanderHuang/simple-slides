@@ -5,6 +5,8 @@ const config = require("./pandoc.config.json");
 
 console.log("Building all");
 
+const cwd = process.cwd();
+
 let dir = fs.readdirSync(".");
 let md = dir
   .filter((p) => path.extname(p) === ".md")
@@ -25,6 +27,7 @@ md.forEach((file) => {
 let style = fs.readFileSync("common.css");
 
 fs.writeFileSync("./dist/common.css", style)
+copyImages();
 
 /**
  * @param config.incremental {boolean} 是否渐进显示列表
@@ -51,3 +54,12 @@ function getRules(config) {
 
   return rule
 }
+
+function copyImages() {
+  if (fs.existsSync(path.resolve(cwd, "./dist/images"))) {
+    childProcess.execSync("rm -rf ./dist/images/");
+  }
+
+  childProcess.execSync("cp -R ./images/ ./dist/images/")
+}
+
