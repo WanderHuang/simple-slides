@@ -7,6 +7,10 @@ console.log("Building all");
 
 const cwd = process.cwd();
 
+if (!fs.existsSync(path.resolve(cwd, "./dist"))) {
+  childProcess.execSync("mkdir dist")
+}
+
 let dir = fs.readdirSync(".");
 let md = dir
   .filter((p) => path.extname(p) === ".md")
